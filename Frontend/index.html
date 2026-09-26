@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TastyHub</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION BAR
+    ====================================================== -->
+
+    <nav class="navbar">
+
+
+        <!-- TastyHub Logo -->
+
+        <div class="brand">
+
+            🍴 TastyHub
+
+        </div>
+
+
+
+        <!-- Main Navigation -->
+
+        <div class="nav-menu">
+
+
+            <a href="#restaurant-list">
+
+                🍽️ Restaurants
+
+            </a>
+
+
+            <a href="#food-list">
+
+                🍔 Food
+
+            </a>
+
+
+            <a href="#cart-list">
+
+                🛒 Cart
+
+            </a>
+
+
+            <a href="#order-list">
+
+                📦 Orders
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- Profile Icon -->
+
+        <div class="profile-menu">
+
+            <a
+                href="profile.html"
+                id="profile-link"
+                class="profile-icon"
+                title="My Profile"
+                aria-label="My Profile"
+            >
+
+                👤
+
+            </a>
+
+        </div>
+
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         HERO SECTION
+    ====================================================== -->
+
+    <header class="hero">
+
+
+        <h1>
+
+            🍴 TastyHub
+
+        </h1>
+
+
+        <p id="welcome-message">
+
+            Welcome to TastyHub!
+
+        </p>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             RESTAURANTS SECTION
+        ================================================== -->
+
+        <section class="section">
+
+
+            <h2>
+
+                🍽️ Restaurants
+
+            </h2>
+
+
+
+            <div class="search-container">
+
+
+                <input
+                    type="text"
+                    id="restaurant-search"
+                    placeholder="🔎 Search restaurants, cuisines or locations..."
+                    autocomplete="off"
+                >
+
+
+            </div>
+
+
+
+            <div id="restaurant-list">
+
+                <!-- Restaurants will appear here -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOD SECTION
+        ================================================== -->
+
+        <section class="section">
+
+
+            <h2>
+
+                🍔 Food Items
+
+            </h2>
+
+
+
+            <div class="search-container">
+
+
+                <input
+                    type="text"
+                    id="food-search"
+                    placeholder="🔎 Search for food..."
+                    autocomplete="off"
+                >
+
+
+
+                <select id="category-filter">
+
+
+                    <option value="">
+
+                        All Categories
+
+                    </option>
+
+
+                </select>
+
+
+            </div>
+
+
+
+            <div id="food-list">
+
+                <!-- Food items will appear here -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CART SECTION
+        ================================================== -->
+
+        <section class="section">
+
+
+            <h2>
+
+                🛒 My Cart
+
+            </h2>
+
+
+
+            <div id="cart-list">
+
+                <!-- Cart items will appear here -->
+
+            </div>
+
+
+
+            <h3 id="cart-total">
+
+                Total: ₹0
+
+            </h3>
+
+
+
+            <button
+                type="button"
+                class="place-order-btn"
+                onclick="placeOrder()"
+            >
+
+                🛍️ Place Order
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ORDERS SECTION
+        ================================================== -->
+
+        <section class="section">
+
+
+            <h2>
+
+                📦 My Orders
+
+            </h2>
+
+
+
+            <div id="order-list">
+
+                <!-- Orders will appear here -->
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="script.js"
+        defer
+    ></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,2316 @@
+/* =====================================================
+   TASTYHUB - MODERN FOOD DELIVERY UI
+===================================================== */
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f9fb;
+    color: #252525;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   NAVIGATION BAR
+===================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 35px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid #eeeeee;
+
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =====================================================
+   TASTYHUB BRAND
+===================================================== */
+
+.brand {
+    font-size: 24px;
+    font-weight: 800;
+
+    color: #ff6b35;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   NAVIGATION MENU
+===================================================== */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-left: 55px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+
+    color: #333;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    transition: all 0.25s ease;
+}
+
+.nav-menu a:hover {
+    background: #fff1eb;
+
+    color: #ff6b35;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   PROFILE MENU
+===================================================== */
+
+.profile-menu {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =====================================================
+   CIRCULAR PROFILE ICON
+===================================================== */
+
+.profile-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    background: #fff1eb;
+
+    border: 2px solid #ff6b35;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+
+    transition: all 0.25s ease;
+
+    cursor: pointer;
+}
+
+.profile-icon:hover {
+    background: #ff6b35;
+
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   CART BADGE
+===================================================== */
+
+.cart-count {
+    position: absolute;
+
+    top: 0;
+    right: 2px;
+
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ff6b35;
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    border-radius: 50%;
+}
+
+
+/* =====================================================
+   HEADER / HERO
+===================================================== */
+
+header {
+    margin: 30px auto 20px;
+
+    max-width: 1200px;
+
+    padding: 55px 35px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff4ef,
+            #ffffff
+        );
+
+    text-align: center;
+
+    border: 1px solid #ffe3d8;
+}
+
+header h1 {
+    font-size: 42px;
+
+    color: #ff6b35;
+
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #666;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   MAIN SECTIONS
+===================================================== */
+
+section {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 30px 20px;
+}
+
+section h2 {
+    font-size: 28px;
+
+    margin-bottom: 22px;
+
+    color: #202020;
+}
+
+section h2::first-letter {
+    color: #ff6b35;
+}
+
+
+/* =====================================================
+   PROFILE SECTION
+===================================================== */
+
+/*
+   IMPORTANT:
+
+   Keep display:none here.
+
+   JavaScript will change it to display:block
+   when the profile icon is clicked.
+
+   Do NOT add !important.
+*/
+
+.profile-section {
+    display: none;
+}
+
+
+/* =====================================================
+   PROFILE INFORMATION BOX
+===================================================== */
+
+#profile-info {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.05);
+
+    max-width: 500px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   PROFILE CARD
+===================================================== */
+
+.profile-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+/* =====================================================
+   PROFILE AVATAR
+===================================================== */
+
+.profile-avatar {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #fff1eb;
+
+    border: 2px solid #ff6b35;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   PROFILE NAME
+===================================================== */
+
+.profile-card h3 {
+    margin-bottom: 4px;
+
+    font-size: 21px;
+
+    color: #222;
+}
+
+
+/* =====================================================
+   PROFILE DETAILS
+===================================================== */
+
+.profile-card p {
+    color: #777;
+
+    margin: 4px 0;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   PROFILE LABEL
+===================================================== */
+
+.profile-label {
+    font-weight: 600;
+
+    color: #444;
+}
+
+
+/* =====================================================
+   LOGOUT BUTTON
+===================================================== */
+
+.logout-btn {
+    margin-top: 10px;
+
+    background: #e53935;
+
+    color: white;
+
+    padding: 11px 20px;
+
+    border-radius: 9px;
+
+    border: none;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: #c62828;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   SEARCH AREA
+===================================================== */
+
+.search-container {
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    flex-wrap: wrap;
+}
+
+input,
+select {
+    height: 46px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    background: white;
+
+    padding: 0 15px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input {
+    flex: 1;
+
+    min-width: 260px;
+}
+
+input:focus,
+select:focus {
+    border-color: #ff6b35;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 107, 53, 0.12);
+}
+
+select {
+    min-width: 180px;
+}
+
+
+/* =====================================================
+   RESTAURANTS
+===================================================== */
+
+#restaurant-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(270px, 1fr));
+
+    gap: 22px;
+}
+
+.restaurant-card {
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 16px;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.11);
+}
+
+.restaurant-image {
+    width: 100%;
+
+    height: 170px;
+
+    object-fit: cover;
+}
+
+.restaurant-content {
+    padding: 18px;
+}
+
+.restaurant-content h3 {
+    font-size: 20px;
+
+    margin-bottom: 8px;
+}
+
+.restaurant-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin: 8px 0;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+.rating {
+    display: inline-block;
+
+    background: #e9f8ef;
+
+    color: #16833b;
+
+    padding: 4px 8px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   FOOD ITEMS
+===================================================== */
+
+#food-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 22px;
+
+    margin-top: 20px;
+}
+
+.food-card {
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    padding: 0;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+.food-image {
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.food-card-content {
+    padding: 18px;
+}
+
+.food-card h3 {
+    margin-top: 0;
+
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+.food-card p {
+    margin: 8px 0;
+
+    text-align: left;
+}
+
+.food-price {
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =====================================================
+   ADD TO CART BUTTON
+===================================================== */
+
+.add-cart-btn {
+    width: 100%;
+
+    padding: 10px 15px;
+
+    margin-top: 10px;
+
+    border-radius: 8px;
+
+    background-color: #e23744;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+.add-cart-btn:hover {
+    background-color: #c92d39;
+}
+
+
+/* =====================================================
+   CART
+===================================================== */
+
+#cart-list {
+    display: grid;
+
+    gap: 15px;
+}
+
+.cart-card {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.cart-main {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.cart-info h3 {
+    margin-bottom: 5px;
+}
+
+.cart-info p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+.cart-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.quantity-btn {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 8px;
+
+    background: #fff1eb;
+
+    color: #ff6b35;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+.quantity-btn:hover {
+    background: #ff6b35;
+
+    color: white;
+}
+
+.quantity {
+    font-weight: bold;
+
+    min-width: 25px;
+
+    text-align: center;
+}
+
+.remove-btn {
+    margin-top: 12px;
+
+    background: transparent;
+
+    color: #e53935;
+
+    font-size: 13px;
+}
+
+.remove-btn:hover {
+    text-decoration: underline;
+}
+
+.item-total {
+    font-weight: bold;
+
+    color: #222;
+}
+
+#cart-total {
+    margin-top: 20px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    border: 1px solid #eeeeee;
+
+    font-size: 23px;
+
+    text-align: right;
+}
+
+.place-order-btn {
+    display: block;
+
+    margin: 18px 0 0 auto;
+
+    background: #ff6b35;
+
+    color: white;
+
+    padding: 13px 25px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+.place-order-btn:hover {
+    background: #e95623;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   ORDERS
+===================================================== */
+
+#order-list {
+    display: grid;
+
+    gap: 18px;
+}
+
+.order-card {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+.order-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.order-header h3 {
+    font-size: 19px;
+}
+
+.status {
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.status-pending {
+    background: #fff4d6;
+
+    color: #a56a00;
+}
+
+.status-delivered {
+    background: #e7f8ed;
+
+    color: #16833b;
+}
+
+.status-cancelled {
+    background: #ffe7e7;
+
+    color: #d32f2f;
+}
+
+.order-details {
+    display: flex;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   EMPTY STATES
+===================================================== */
+
+.empty-message {
+    background: white;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    color: #777;
+
+    border: 1px dashed #ddd;
+}
+
+
+/* =====================================================
+   LOGIN / SIGNUP
+===================================================== */
+
+.auth-container {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff4ef 0%,
+            #ffffff 50%,
+            #fff8f4 100%
+        );
+}
+
+
+/* =====================================================
+   AUTH CARD
+===================================================== */
+
+.auth-card {
+    width: 100%;
+
+    max-width: 420px;
+
+    background: white;
+
+    padding: 38px 35px;
+
+    border-radius: 20px;
+
+    border: 1px solid #eeeeee;
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.10);
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   AUTH LOGO
+===================================================== */
+
+.auth-logo {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #fff1eb;
+
+    border: 2px solid #ff6b35;
+
+    border-radius: 50%;
+
+    font-size: 34px;
+}
+
+
+/* =====================================================
+   AUTH TITLE
+===================================================== */
+
+.auth-card h1 {
+    color: #ff6b35;
+
+    margin-bottom: 6px;
+
+    font-size: 28px;
+}
+
+.auth-card h2 {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+
+    color: #222;
+}
+
+
+/* =====================================================
+   AUTH SUBTITLE
+===================================================== */
+
+.auth-subtitle {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   AUTH FORM
+===================================================== */
+
+.auth-card form {
+    width: 100%;
+}
+
+
+/* =====================================================
+   AUTH INPUTS
+===================================================== */
+
+.auth-card input {
+    width: 100%;
+
+    margin-bottom: 15px;
+
+    height: 48px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    padding: 0 15px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.auth-card input:focus {
+    border-color: #ff6b35;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 107, 53, 0.12);
+}
+
+
+/* =====================================================
+   AUTH BUTTON
+===================================================== */
+
+.auth-card button,
+.auth-btn {
+    width: 100%;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    background: #ff6b35;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.auth-card button:hover,
+.auth-btn:hover {
+    background: #e95623;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   AUTH LINKS
+===================================================== */
+
+.auth-card a {
+    color: #ff6b35;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.auth-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
+
+.forgot-password {
+    display: block;
+
+    text-align: right;
+
+    margin-top: -5px;
+
+    margin-bottom: 18px;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   AUTH FOOTER
+===================================================== */
+
+.auth-footer {
+    margin-top: 22px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   AUTH MESSAGE
+===================================================== */
+
+#login-message,
+#signup-message {
+    margin: 15px 0;
+
+    min-height: 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* Success message */
+
+.message-success {
+    color: #16833b;
+}
+
+
+/* Error message */
+
+.message-error {
+    color: #d32f2f;
+}
+
+
+/* =====================================================
+   AUTH LOADING BUTTON
+===================================================== */
+
+.auth-btn:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+#tasty-toast {
+    position: fixed;
+
+    bottom: 25px;
+
+    right: 25px;
+
+    z-index: 9999;
+
+    padding: 14px 20px;
+
+    border-radius: 10px;
+
+    color: white;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 10px 20px;
+
+        height: auto;
+
+        min-height: 70px;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+    .brand {
+        font-size: 22px;
+    }
+
+    .nav-menu {
+        margin-left: 20px;
+
+        gap: 5px;
+
+        flex-wrap: wrap;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+
+        padding: 8px 10px;
+    }
+
+    .profile-menu {
+        margin-left: auto;
+    }
+}
+
+
+/* =====================================================
+   MOBILE - 650px
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        justify-content: center;
+
+        padding: 12px;
+    }
+
+    .brand {
+        width: 100%;
+
+        text-align: center;
+
+        margin-bottom: 5px;
+    }
+
+    .nav-menu {
+        margin-left: 0;
+
+        justify-content: center;
+    }
+
+    .profile-menu {
+        position: absolute;
+
+        right: 15px;
+
+        top: 14px;
+    }
+
+    .nav-menu a {
+        font-size: 12px;
+
+        padding: 7px 8px;
+    }
+
+    header {
+        margin: 15px;
+
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 25px 15px;
+    }
+
+    .cart-main {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    #cart-total {
+        text-align: left;
+    }
+
+    .place-order-btn {
+        margin-left: 0;
+    }
+
+
+    /* AUTH MOBILE */
+
+    .auth-container {
+        padding: 15px;
+    }
+
+    .auth-card {
+        padding: 30px 22px;
+
+        border-radius: 16px;
+    }
+
+    .auth-card h1 {
+        font-size: 25px;
+    }
+
+    .auth-card h2 {
+        font-size: 22px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE - 500px
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .nav-menu {
+        width: 100%;
+
+        justify-content: center;
+
+        padding-right: 40px;
+    }
+
+    .nav-menu a {
+        font-size: 11px;
+
+        padding: 6px 7px;
+    }
+
+    section h2 {
+        font-size: 23px;
+    }
+
+    input {
+        min-width: 100%;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    .food-image,
+    .restaurant-image {
+        height: 160px;
+    }
+
+    .profile-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    #profile-info {
+        width: 100%;
+    }
+
+
+    /* AUTH SMALL SCREEN */
+
+    .auth-container {
+        padding: 12px;
+    }
+
+    .auth-card {
+        padding: 28px 18px;
+    }
+
+    .auth-logo {
+        width: 60px;
+        height: 60px;
+
+        font-size: 28px;
+    }
+
+    .auth-card input {
+        height: 46px;
+    }
+}
+/* =====================================================
+   PROFESSIONAL PROFILE PAGE
+===================================================== */
+
+.profile-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 45px 25px 70px;
+}
+
+
+/* PROFILE HEADER */
+
+.profile-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+
+.profile-page-header h1 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+
+.profile-page-header p {
+    margin-top: 10px;
+    color: #777;
+    font-size: 17px;
+}
+
+
+.back-home-btn {
+    display: inline-block;
+    background: #ff6b35;
+    color: white;
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+
+.back-home-btn:hover {
+    background: #e85a25;
+    transform: translateY(-2px);
+}
+/* =====================================================
+   TASTYHUB - CLEAN PROFESSIONAL PROFILE PAGE
+===================================================== */
+
+
+/* =====================================================
+   PROFILE PAGE
+===================================================== */
+
+.profile-page {
+    width: min(1000px, 92%);
+    margin: 0 auto;
+    padding: 45px 0 70px;
+}
+
+
+/* =====================================================
+   PROFILE PAGE HEADER
+===================================================== */
+
+.profile-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.profile-page-header h1 {
+    margin: 0;
+
+    font-size: 34px;
+    font-weight: 800;
+
+    color: #222;
+}
+
+.profile-page-header p {
+    margin-top: 6px;
+
+    color: #777;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   BACK HOME BUTTON
+===================================================== */
+
+.back-home-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 18px;
+
+    background: #ff6b35;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: all 0.2s ease;
+}
+
+.back-home-btn:hover {
+    background: #e95623;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(255, 107, 53, 0.20);
+}
+
+
+/* =====================================================
+   PROFILE DETAILS SECTION
+===================================================== */
+
+.profile-details-section {
+    width: 100%;
+}
+
+
+/* =====================================================
+   PROFILE MAIN CARD
+===================================================== */
+
+#profile-info {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   USER PROFILE CARD
+===================================================== */
+
+.profile-user-card {
+    position: relative;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =====================================================
+   PROFILE COVER
+===================================================== */
+
+.profile-user-card::before {
+    content: "";
+
+    display: block;
+
+    height: 135px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6b35,
+            #ff8a50
+        );
+}
+
+
+/* =====================================================
+   PROFILE AVATAR
+===================================================== */
+
+.large-profile-avatar {
+    width: 105px;
+    height: 105px;
+
+    margin-top: -52px;
+    margin-left: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background: #ffffff;
+
+    border: 5px solid #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 48px;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.14);
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   PROFILE USER INFORMATION
+===================================================== */
+
+.profile-user-info {
+    padding: 10px 35px 30px;
+}
+
+
+.profile-user-info h2 {
+    margin: 0 0 8px;
+
+    font-size: 28px;
+
+    font-weight: 750;
+
+    color: #222;
+}
+
+
+.profile-user-info p {
+    margin: 7px 0;
+
+    color: #666;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   PROFILE EMAIL
+===================================================== */
+
+.profile-user-info p:first-of-type {
+    color: #555;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   PROFILE ROLE
+===================================================== */
+
+.profile-user-info p:last-of-type {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 5px 12px;
+
+    background: #fff1eb;
+
+    color: #ff6b35;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   ORDERS HISTORY SECTION
+===================================================== */
+
+.orders-history-section {
+    width: 100%;
+
+    margin-top: 40px;
+}
+
+
+/* =====================================================
+   ORDERS TITLE
+===================================================== */
+
+.orders-title {
+    margin-bottom: 20px;
+}
+
+.orders-title h2 {
+    margin: 0;
+
+    font-size: 28px;
+
+    font-weight: 750;
+
+    color: #222;
+}
+
+.orders-title p {
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   PROFILE ORDERS LIST
+===================================================== */
+
+#profile-orders-list {
+    width: 100%;
+}
+
+
+/* =====================================================
+   ORDER CARD
+===================================================== */
+
+.profile-order-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    margin-bottom: 16px;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.05);
+
+    transition: all 0.2s ease;
+}
+
+.profile-order-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   ORDER TOP
+===================================================== */
+
+.profile-order-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.profile-order-top h3 {
+    margin: 0;
+
+    font-size: 18px;
+
+    color: #222;
+}
+
+
+.profile-order-top p {
+    margin-top: 4px;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   ORDER TOTAL
+===================================================== */
+
+.order-total {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #ff6b35;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   ORDER STATUS
+===================================================== */
+
+.profile-order-status {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px 12px;
+
+    padding: 16px 0;
+}
+
+.profile-order-status > span {
+    color: #777;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   ORDER STATUS BADGE
+===================================================== */
+
+.profile-order-status .status,
+.profile-order-status .payment {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* Pending */
+
+.status.pending {
+    background: #fff4d6;
+
+    color: #a56a00;
+}
+
+
+/* Confirmed */
+
+.status.confirmed {
+    background: #e8f2ff;
+
+    color: #2468a2;
+}
+
+
+/* Preparing */
+
+.status.preparing {
+    background: #fff1df;
+
+    color: #b76500;
+}
+
+
+/* Out for delivery */
+
+.status.out-for-delivery {
+    background: #eee8ff;
+
+    color: #6842a5;
+}
+
+
+/* Delivered */
+
+.status.delivered {
+    background: #e7f8ed;
+
+    color: #16833b;
+}
+
+
+/* Cancelled */
+
+.status.cancelled {
+    background: #ffe7e7;
+
+    color: #d32f2f;
+}
+
+
+/* =====================================================
+   PAYMENT STATUS
+===================================================== */
+
+.payment.pending {
+    background: #fff4d6;
+
+    color: #a56a00;
+}
+
+
+.payment.paid {
+    background: #e7f8ed;
+
+    color: #16833b;
+}
+
+
+/* =====================================================
+   ORDER ACTION BUTTONS
+===================================================== */
+
+.profile-order-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    padding-top: 5px;
+}
+
+
+.profile-order-actions button {
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 9px 15px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.profile-order-actions button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   PAY BUTTON
+===================================================== */
+
+.profile-order-actions .pay-btn {
+    background: #e7f8ed;
+
+    color: #16833b;
+}
+
+.profile-order-actions .pay-btn:hover {
+    background: #d5f1df;
+}
+
+
+/* =====================================================
+   CANCEL BUTTON
+===================================================== */
+
+.profile-order-actions .cancel-btn {
+    background: #fff0ed;
+
+    color: #d84315;
+}
+
+.profile-order-actions .cancel-btn:hover {
+    background: #ffe1da;
+}
+
+
+/* =====================================================
+   REMOVE BUTTON
+===================================================== */
+
+.profile-order-actions .remove-btn {
+    background: #f3f3f3;
+
+    color: #555;
+}
+
+.profile-order-actions .remove-btn:hover {
+    background: #e7e7e7;
+}
+
+
+/* =====================================================
+   EMPTY ORDERS
+===================================================== */
+
+.empty-orders {
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 16px;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+
+.empty-orders > :first-child {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+
+.empty-orders h3 {
+    margin: 0 0 6px;
+
+    font-size: 20px;
+
+    color: #222;
+}
+
+
+.empty-orders p {
+    margin-bottom: 18px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   BROWSE FOOD BUTTON
+===================================================== */
+
+.browse-food-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 18px;
+
+    background: #ff6b35;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+.browse-food-btn:hover {
+    background: #e95623;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading-message {
+    width: 100%;
+
+    padding: 35px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 15px;
+
+    color: #777;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =====================================================
+   ERROR MESSAGE
+===================================================== */
+
+.error-message {
+    width: 100%;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #fff5f5;
+
+    border: 1px solid #ffd6d6;
+
+    border-radius: 14px;
+
+    color: #d32f2f;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   LOGOUT BUTTON
+===================================================== */
+
+.profile-logout-btn {
+    display: block;
+
+    margin: 28px auto 0;
+
+    padding: 11px 25px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #fff0ed;
+
+    color: #d84315;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.profile-logout-btn:hover {
+    background: #ffe0d8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .profile-page {
+        width: 92%;
+
+        padding-top: 30px;
+    }
+
+    .profile-page-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .profile-page-header h1 {
+        font-size: 30px;
+    }
+
+    .back-home-btn {
+        width: fit-content;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 550px) {
+
+    .profile-page {
+        width: 94%;
+
+        padding-top: 25px;
+    }
+
+    .profile-page-header h1 {
+        font-size: 26px;
+    }
+
+    .profile-page-header p {
+        font-size: 14px;
+    }
+
+    .back-home-btn {
+        width: 100%;
+    }
+
+
+    /* PROFILE CARD */
+
+    .profile-user-card::before {
+        height: 110px;
+    }
+
+    .large-profile-avatar {
+        width: 90px;
+        height: 90px;
+
+        margin-top: -45px;
+        margin-left: 20px;
+
+        font-size: 40px;
+    }
+
+    .profile-user-info {
+        padding: 10px 20px 25px;
+    }
+
+    .profile-user-info h2 {
+        font-size: 24px;
+    }
+
+
+    /* ORDERS */
+
+    .orders-history-section {
+        margin-top: 30px;
+    }
+
+    .orders-title h2 {
+        font-size: 24px;
+    }
+
+
+    .profile-order-card {
+        padding: 16px;
+    }
+
+    .profile-order-top {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .order-total {
+        font-size: 18px;
+    }
+
+
+    .profile-order-status {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+
+    .profile-order-actions {
+        flex-direction: column;
+    }
+
+    .profile-order-actions button {
+        width: 100%;
+    }
+
+}

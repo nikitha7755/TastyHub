@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TastyHub - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-card">
+
+            <!-- Logo -->
+            <div class="auth-logo">🍴</div>
+
+            <!-- Title -->
+            <h1>TastyHub</h1>
+
+            <h2>Welcome Back</h2>
+
+            <p class="auth-subtitle">
+                Login to continue to TastyHub
+            </p>
+
+            <!-- Login Form -->
+            <form id="login-form">
+
+                <input
+                    type="text"
+                    id="login-name"
+                    placeholder="Username"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="login-password"
+                    placeholder="Password"
+                    required
+                >
+
+                <!-- Forgot Password -->
+                <a
+                    href="#"
+                    class="forgot-password"
+                    id="forgot-password-link"
+                >
+                    Forgot Password?
+                </a>
+
+                <!-- Login Message -->
+                <p id="login-message"></p>
+
+                <!-- Login Button -->
+                <button
+                    type="submit"
+                    class="auth-btn"
+                >
+                    Login
+                </button>
+
+            </form>
+
+            <!-- Signup -->
+            <p class="auth-footer">
+                Don't have an account?
+                <a href="signup.html">
+                    Create an account
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
